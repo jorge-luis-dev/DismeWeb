@@ -1,16 +1,13 @@
-# Copyright 2021 ACSONE SA/NV (<http://acsone.eu>)
-# License AGPL-3.0 or later (http://www.gnu.org/licenses/agpl.html).
-
 import odoo.tests.common as common
 
 
-class TestProductCategoryCode(common.TransactionCase):
+class TestProductCategoryCustom(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
         vals = {
             "name": "Category Test",
-            "code": "TEST",
+            "external_url": "www.odoo.com"
         }
         cls.category = cls.env["product.category"].create(vals)
 
@@ -18,6 +15,6 @@ class TestProductCategoryCode(common.TransactionCase):
         new_category = self.category.copy()
 
         self.assertEqual(
-            "TEST-copy",
-            new_category.code,
+            False,
+            new_category.is_published,
         )
