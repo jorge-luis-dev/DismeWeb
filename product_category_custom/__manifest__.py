@@ -9,7 +9,7 @@
     "license": "AGPL-3",
     "author": "ACSONE SA/NV,Odoo Community Association (OCA)",
     "maintainers": ["rousseldenis"],
-    "website": "https://github.com/OCA/product-attribute",
+    "website": "https://github.com/OCA/l10n-ecuador",
     "depends": [
         "product",
     ],

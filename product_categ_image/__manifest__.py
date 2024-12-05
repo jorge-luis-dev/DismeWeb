@@ -10,7 +10,7 @@
     "license": "AGPL-3",
     "summary": "Add image on product category",
     "author": "Akretion,Odoo Community Association (OCA)",
-    "website": "https://github.com/OCA/product-attribute",
+    "website": "https://github.com/OCA/l10n-ecuador",
     "depends": ["product"],
     "excludes": ["product_default_image"],
     "data": ["views/product_view.xml"],

@@ -1,6 +1,7 @@
+import re
+
 from odoo import _, api, fields, models
 from odoo.exceptions import ValidationError
-import re
 
 
 class ProductCategory(models.Model):
@@ -17,11 +18,11 @@ class ProductCategory(models.Model):
 
     def _check_url(self, url):
         # Basic URL validation using a regex
-        url_regex = r'^(https?://)?([a-z0-9.-]+)\.[a-z]{2,}(/.*)?$'
+        url_regex = r"^(https?://)?([a-z0-9.-]+)\.[a-z]{2,}(/.*)?$"
         return re.match(url_regex, url)
 
-    @api.constrains('external_url')
+    @api.constrains("external_url")
     def _validate_url(self):
         for record in self:
             if record.external_url and not self._check_url(record.external_url):
-                raise ValidationError("The URL provided is not valid.")
+                raise ValidationError(_("The URL provided is not valid."))

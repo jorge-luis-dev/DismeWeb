@@ -5,10 +5,7 @@ class TestProductCategoryCustom(common.TransactionCase):
     @classmethod
     def setUpClass(cls):
         super().setUpClass()
-        vals = {
-            "name": "Category Test",
-            "external_url": "www.odoo.com"
-        }
+        vals = {"name": "Category Test", "external_url": "www.odoo.com"}
         cls.category = cls.env["product.category"].create(vals)
 
     def test_category(self):
