@@ -9,5 +9,6 @@
     "depends": ["portal"],
     "data": [
         # 'security/ir.model.access.csv',
+        "views/home_web_portal.xml",
     ],
 }
