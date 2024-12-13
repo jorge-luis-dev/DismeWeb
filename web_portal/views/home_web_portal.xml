@@ -1,94 +1,99 @@
 <odoo>
-	<template id="home_web_portal" name="Home">
-		<t t-call="web.frontend_layout">
-			<t t-set="title">
+    <template id="home_web_portal" name="Home">
+        <t t-call="web.frontend_layout">
+            <t t-set="title">
 				Home
 			</t>
-			<div class="container">
-				<h1>
+            <div class="container">
+                <h1>
 					Bienvenido ha nuestro portal
 				</h1>
-			</div>
-			<div class="container">
-				<h2>
+            </div>
+            <div class="container">
+                <h2>
 					Categorias de Productos
 				</h2>
-				<table class="table">
-					<thead>
-						<tr>
-							<th>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
 								Nombre
 							</th>
-							<th>
+                            <th>
 								Enlace externo
 							</th>
-						</tr>
-					</thead>
-					<tbody>
-						<t t-foreach="categories" t-as="category">
-							<tr>
-								<td>
-									<t t-if="category.external_url">
-										<a t-attf-href="{{category.external_url}}" target="_blank">
-											<span t-field="category.name" />
-										</a>
-									</t>
-									<t t-else="">
-										<a t-attf-href="/hola/odoo/v1/products/category/{{category.id}}">
-											<span t-field="category.name" />
-										</a>
-									</t>
-								</td>
-								<td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="categories" t-as="category">
+                            <tr>
+                                <td>
+                                    <t t-if="category.external_url">
+                                        <a
+                                            t-attf-href="{{category.external_url}}"
+                                            target="_blank"
+                                        >
+                                            <span t-field="category.name" />
+                                        </a>
+                                    </t>
+                                    <t t-else="">
+                                        <a
+                                            t-attf-href="/hola/odoo/v1/products/category/{{category.id}}"
+                                        >
+                                            <span t-field="category.name" />
+                                        </a>
+                                    </t>
+                                </td>
+                                <td>
 									...
 								</td>
-							</tr>
-						</t>
-					</tbody>
-				</table>
-			</div>
-		</t>
-	</template>
-	<template id="products_category_web_portal" name="Products by Category">
-		<t t-call="web.frontend_layout">
-			<t t-set="title">
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
+    <template id="products_category_web_portal" name="Products by Category">
+        <t t-call="web.frontend_layout">
+            <t t-set="title">
 				Productos
 			</t>
-			<div class="container">
-				<h2 t-out="categorie_name" />
-				<table class="table">
-					<thead>
-						<tr>
-							<th>
+            <div class="container">
+                <h2 t-out="categorie_name" />
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
 								Nombre
 							</th>
-							<th>
+                            <th>
 								Tipo
 							</th>
-						</tr>
-					</thead>
-					<tbody>
-						<t t-foreach="products" t-as="product">
-							<tr>
-								<td>
-									<t t-out="product.name" />
-								</td>
-								<td>
-									<t t-if="product.type == 'consu'">
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="products" t-as="product">
+                            <tr>
+                                <td>
+                                    <t t-out="product.name" />
+                                </td>
+                                <td>
+                                    <t t-if="product.type == 'consu'">
 										Goods
 									</t>
-									<t t-if="product.type == 'service'">
+                                    <t t-if="product.type == 'service'">
 										Service
 									</t>
-									<t t-if="product.type == 'combo'">
+                                    <t t-if="product.type == 'combo'">
 										Combo
 									</t>
-								</td>
-							</tr>
-						</t>
-					</tbody>
-				</table>
-			</div>
-		</t>
-	</template>
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
 </odoo>
