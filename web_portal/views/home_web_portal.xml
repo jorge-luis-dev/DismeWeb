@@ -3,96 +3,54 @@
         <t t-call="web.frontend_layout">
             <t t-set="title">
 				Home
-			</t>
+            </t>
             <div class="container">
                 <h1>
-					Bienvenido ha nuestro portal
-				</h1>
+					Bienvenido ha nuestro portal en construcción
+                </h1>
             </div>
             <div class="container">
                 <h2>
 					Categorias de Productos
-				</h2>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>
-								Nombre
-							</th>
-                            <th>
-								Enlace externo
-							</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <t t-foreach="categories" t-as="category">
-                            <tr>
-                                <td>
+                </h2>
+                <div class="row">
+                    <t t-foreach="categories" t-as="category">
+                        <div class="col-md-4">
+                            <div class="card">
+                                <img
+                                    t-att-src="image_data_uri(category.image_1920)"
+                                    class="card-img-top"
+                                    style="max-height:85pt;max-width:85pt"
+                                />
+                                <div class="card-body">
+                                    <h5
+                                        class="card-title
+                                    "
+                                    >
+                                        <t t-out="category.name" />
+                                    </h5>
                                     <t t-if="category.external_url">
                                         <a
                                             t-attf-href="{{category.external_url}}"
                                             target="_blank"
+                                            class="btn btn-outline-primary"
                                         >
-                                            <span t-field="category.name" />
+                                        Ver Productos
                                         </a>
                                     </t>
                                     <t t-else="">
                                         <a
                                             t-attf-href="/hola/odoo/v1/products/category/{{category.id}}"
+                                            class="btn btn-outline-primary"
                                         >
-                                            <span t-field="category.name" />
+                                        Ver Productos
                                         </a>
                                     </t>
-                                </td>
-                                <td>
-									...
-								</td>
-                            </tr>
-                        </t>
-                    </tbody>
-                </table>
-            </div>
-        </t>
-    </template>
-    <template id="products_category_web_portal" name="Products by Category">
-        <t t-call="web.frontend_layout">
-            <t t-set="title">
-				Productos
-			</t>
-            <div class="container">
-                <h2 t-out="categorie_name" />
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th>
-								Nombre
-							</th>
-                            <th>
-								Tipo
-							</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <t t-foreach="products" t-as="product">
-                            <tr>
-                                <td>
-                                    <t t-out="product.name" />
-                                </td>
-                                <td>
-                                    <t t-if="product.type == 'consu'">
-										Goods
-									</t>
-                                    <t t-if="product.type == 'service'">
-										Service
-									</t>
-                                    <t t-if="product.type == 'combo'">
-										Combo
-									</t>
-                                </td>
-                            </tr>
-                        </t>
-                    </tbody>
-                </table>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </div>
             </div>
         </t>
     </template>
