@@ -91,3 +91,12 @@ Run
 pre-commit run -a
 ```
 
+## Uninstall modules
+### Go to odoo shell
+```
+odoo shell -c odoo.conf
+```
+and run uninstall web_portal module
+```
+self.env["ir.module.module"].search([("name", "=", "web_portal")]).button_immediate_uninstall()
+```
