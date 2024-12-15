@@ -1,38 +1,40 @@
 <odoo>
-
-  <template id="products_category_web_portal" name="Products by Category">
-    <t t-call="web.frontend_layout">
-      <t t-set="title">
+    <template id="products_category_web_portal" name="Products by Category">
+        <t t-call="web.frontend_layout">
+            <t t-set="title">
 				Productos
       </t>
-      <div class="container">
-        <h2 t-out="categorie_name" />
-        <table class="table">
-          <thead>
-            <tr>
-              <th>
+            <div class="container">
+                <h2 t-out="categorie_name" />
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>
 								Nombre
               </th>
-              <th>
+                            <th>
 								Imagen
               </th>
-            </tr>
-          </thead>
-          <tbody>
-            <t t-foreach="products" t-as="product">
-              <tr>
-                <td>
-                  <t t-out="product.name" />
-                </td>
-                <td>
-                  <img t-attf-src="data:image/png;base64,{{product.image_1920}}" class="card-img-top" style="max-height:85pt;max-width:85pt"/>
-                </td>
-              </tr>
-            </t>
-          </tbody>
-        </table>
-      </div>
-    </t>
-  </template>
-
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <t t-foreach="products" t-as="product">
+                            <tr>
+                                <td>
+                                    <t t-out="product.name" />
+                                </td>
+                                <td>
+                                    <img
+                                        t-attf-src="data:image/png;base64,{{product.image_1920}}"
+                                        class="card-img-top"
+                                        style="max-height:85pt;max-width:85pt"
+                                    />
+                                </td>
+                            </tr>
+                        </t>
+                    </tbody>
+                </table>
+            </div>
+        </t>
+    </template>
 </odoo>

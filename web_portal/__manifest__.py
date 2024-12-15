@@ -8,6 +8,7 @@
     "category": "website",
     "depends": [
         "stock",
+        "l10n_ec",
         "portal",
         "product_categ_image",
         "product_category_custom",
@@ -19,4 +20,5 @@
         "views/404.xml",
     ],
     "installable": True,
+    "post_init_hook": "post_init_hook",
 }
