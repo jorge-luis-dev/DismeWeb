@@ -1,4 +1,4 @@
-from odoo import fields, models, _
+from odoo import fields, models
 
 
 class ProductTemplate(models.Model):
@@ -10,5 +10,8 @@ class ProductTemplate(models.Model):
 
     is_published = fields.Boolean(
         string="Published",
-        default=False,
+        default=True,
     )
+
+    pdf_attachment = fields.Binary("PDF Attachment")
+    pdf_attachment_name = fields.Char("PDF File Name")

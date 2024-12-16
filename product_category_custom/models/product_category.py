@@ -13,7 +13,7 @@ class ProductCategory(models.Model):
 
     is_published = fields.Boolean(
         string="Published",
-        default=False,
+        default=True,
     )
 
     def _check_url(self, url):
