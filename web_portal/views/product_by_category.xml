@@ -3,17 +3,29 @@
         <t t-call="web.frontend_layout">
             <t t-set="title">
 				Productos
-      </t>
+            </t>
             <div class="container">
                 <br />
-                <h2 t-out="categorie_name" />
+
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="/">Inicio</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            <t t-out="categorie_name" />
+                        </li>
+                    </ol>
+                </nav>
+
                 <br />
+
                 <table class="table table-hover">
                     <thead>
                         <tr>
                             <th>
 								Nombre
-              </th>
+                            </th>
                             <th />
                         </tr>
                     </thead>
@@ -21,7 +33,11 @@
                         <t t-foreach="products" t-as="product">
                             <tr>
                                 <td>
-                                    <t t-out="product.name" />
+                                    <a
+                                        t-attf-href="/hola/odoo/v1/products/product/{{product.id}}"
+                                    >
+                                        <t t-out="product.name" />
+                                    </a>
                                 </td>
                                 <td>
                                     <img

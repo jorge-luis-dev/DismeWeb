@@ -17,6 +17,7 @@
         # 'security/ir.model.access.csv',
         "views/home_web_portal.xml",
         "views/product_by_category.xml",
+        "views/product.xml",
         "views/404.xml",
     ],
     "installable": True,

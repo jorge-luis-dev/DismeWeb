@@ -1,0 +1,51 @@
+<odoo>
+    <template id="product_web_portal" name="Product">
+        <t t-call="web.frontend_layout">
+            <t t-set="title">
+				Producto
+            </t>
+            <div class="container">
+                <br />
+
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="/">Inicio</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a t-attf-href="/hola/odoo/v1/products/category/{{product.categ_id.id}}">
+                                <t t-out="product.categ_id.name" />
+                            </a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">
+                            <t t-out="product.name" />
+                        </li>
+                    </ol>
+                </nav>
+
+                <br />
+                <h2 t-out="product.name" />
+                <br />
+            </div>
+            <div class="container">
+
+                <div class="card" style="width: 18rem;">
+                    <img t-attf-src="data:image/png;base64,{{product.image_1920}}" class="card-img-top" style="max-height:85pt;max-width:85pt" />
+
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <t t-out="product.name" />
+                        </h5>
+
+                        <t t-if="product.pdf_attachment_name">
+                            <a t-attf-href="data:application/pdf;base64,{{product.pdf_attachment}}" t-att-download="product.name" class="btn btn-danger">PDF</a>
+                        </t>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </t>
+    </template>
+</odoo>

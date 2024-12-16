@@ -3,7 +3,7 @@ from odoo.http import request, route
 from odoo.addons.website.controllers.main import Home
 
 
-class Categorie(Home):
+class Category(Home):
     @route(
         "/hola/odoo/v1/products/category/<int:category_id>", auth="public", website=True
     )

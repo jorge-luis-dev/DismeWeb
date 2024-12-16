@@ -1,2 +1,3 @@
 from . import main
-from . import categorie
+from . import category
+from . import product
