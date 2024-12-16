@@ -22,7 +22,9 @@ class Category(Home):
             category_name = f"Productos de {result[0]["name"]}"
 
             Product = request.env["product.template"]
-            products = Product.sudo().search([("categ_id", "=", category_id)])
+            products = Product.sudo().search(
+                [("categ_id", "=", category_id)], order="name asc"
+            )
         else:
             return request.render("web_portal.404", status=404)
 

@@ -40,11 +40,13 @@
                                     </a>
                                 </td>
                                 <td>
-                                    <img
-                                        t-attf-src="data:image/png;base64,{{product.image_1920}}"
-                                        class="card-img-top"
-                                        style="max-height:85pt;max-width:85pt"
-                                    />
+                                    <t t-if="product.image_1920">
+                                        <img
+                                            t-attf-src="data:image/png;base64,{{product.image_1920}}"
+                                            class="card-img-top"
+                                            style="max-height:85pt;max-width:85pt"
+                                        />
+                                    </t>
                                 </td>
                             </tr>
                         </t>
