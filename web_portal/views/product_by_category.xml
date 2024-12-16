@@ -5,16 +5,16 @@
 				Productos
       </t>
             <div class="container">
+                <br />
                 <h2 t-out="categorie_name" />
-                <table class="table">
+                <br />
+                <table class="table table-hover">
                     <thead>
                         <tr>
                             <th>
 								Nombre
               </th>
-                            <th>
-								Imagen
-              </th>
+                            <th />
                         </tr>
                     </thead>
                     <tbody>

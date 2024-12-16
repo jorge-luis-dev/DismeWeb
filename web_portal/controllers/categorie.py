@@ -19,7 +19,7 @@ class Categorie(Home):
         )
 
         if result:
-            category_name = f"Products of {result[0]["name"]}"
+            category_name = f"Productos de {result[0]["name"]}"
 
             Product = request.env["product.template"]
             products = Product.sudo().search([("categ_id", "=", category_id)])
