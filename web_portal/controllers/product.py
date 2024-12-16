@@ -19,10 +19,10 @@ class Product(Home):
 
         if result:
             return request.render(
-            "web_portal.product_web_portal",
-            {
-                "product": result[0],
-            },
-        )
+                "web_portal.product_web_portal",
+                {
+                    "product": result[0],
+                },
+            )
         else:
             return request.render("web_portal.404", status=404)

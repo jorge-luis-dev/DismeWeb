@@ -7,6 +7,7 @@
             <notebook>
                 <page string="Web" name="web">
                     <group>
+                        <field name="description" />
                         <field name="external_url" widget="url" />
                         <field name="is_published" />
                         <field name="pdf_attachment" filename="pdf_attachment_name" />
