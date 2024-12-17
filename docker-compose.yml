@@ -5,13 +5,15 @@ services:
     build:
       context: ./
       dockerfile: Dockerfile
+    restart: always
+    image: dismeweb
     container_name: dismeweb
     network_mode: bridge
     ports:
       - "8069:8069"
     environment:
-      HOST: 'host.docker.internal'
-      USER: 'odoo'
-      PASSWORD: 'o'
+      HOST: "host.docker.internal"
+      USER: "odoo"
+      PASSWORD: "o"
     extra_hosts:
       - "host.docker.internal:host-gateway"
