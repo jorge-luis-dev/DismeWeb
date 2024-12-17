@@ -1,0 +1,17 @@
+version: "3.7"
+
+services:
+  web:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    container_name: dismeweb
+    network_mode: bridge
+    ports:
+      - "8069:8069"
+    environment:
+      HOST: 'host.docker.internal'
+      USER: 'odoo'
+      PASSWORD: 'o'
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
